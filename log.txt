@@ -1,0 +1,35 @@
+
+
+[31m2022/04/06 09:34:30 [Recovery] 2022/04/06 - 09:34:30 panic recovered:
+assignment to entry in nil map
+C:/Program Files/Go/src/runtime/map_faststr.go:204 (0x18322e)
+	mapassign_faststr: panic(plainError("assignment to entry in nil map"))
+H:/porject/Go/linuxNet/server/model/socket/wsPool/wsPool.go:37 (0x66b368)
+	Pool.AddWs: p[name] = ws
+H:/porject/Go/linuxNet/server/control/sockerControl.go:38 (0x66c90d)
+	UpgradeSocket: process.Env.WsPool.AddWs(token, wsPool.Ws{
+H:/porject/Go/linuxNet/lib/pkg/mod/github.com/gin-gonic/gin@v1.7.7/context.go:168 (0x632a41)
+	(*Context).Next: c.handlers[c.index](c)
+H:/porject/Go/linuxNet/lib/pkg/mod/github.com/gin-gonic/gin@v1.7.7/recovery.go:99 (0x632a2c)
+	CustomRecoveryWithWriter.func1: c.Next()
+H:/porject/Go/linuxNet/lib/pkg/mod/github.com/gin-gonic/gin@v1.7.7/context.go:168 (0x631ca6)
+	(*Context).Next: c.handlers[c.index](c)
+H:/porject/Go/linuxNet/lib/pkg/mod/github.com/gin-gonic/gin@v1.7.7/logger.go:241 (0x631c89)
+	LoggerWithConfig.func1: c.Next()
+H:/porject/Go/linuxNet/lib/pkg/mod/github.com/gin-gonic/gin@v1.7.7/context.go:168 (0x631230)
+	(*Context).Next: c.handlers[c.index](c)
+H:/porject/Go/linuxNet/lib/pkg/mod/github.com/gin-gonic/gin@v1.7.7/gin.go:555 (0x630e98)
+	(*Engine).handleHTTPRequest: c.Next()
+H:/porject/Go/linuxNet/lib/pkg/mod/github.com/gin-gonic/gin@v1.7.7/gin.go:511 (0x6309d1)
+	(*Engine).ServeHTTP: engine.handleHTTPRequest(c)
+C:/Program Files/Go/src/net/http/server.go:2879 (0x426dfa)
+	serverHandler.ServeHTTP: handler.ServeHTTP(rw, req)
+C:/Program Files/Go/src/net/http/server.go:1930 (0x4224a7)
+	(*conn).serve: serverHandler{c.server}.ServeHTTP(w, w.req)
+C:/Program Files/Go/src/runtime/asm_amd64.s:1581 (0x1d49c0)
+	goexit: BYTE	$0x90	// NOP
+[0m
+P(w, w.req)
+C:/Program Files/Go/src/runtime/asm_amd64.s:1581 (0xb949c0)
+	goexit: BYTE	$0x90	// NOP
+[0m

@@ -1,0 +1,19 @@
+#服务器设置
+service:
+  port: '3008'
+mqtt:
+  host: ''
+  port: ''
+  loginName: ''
+  password: ''
+redis:
+  host: ''
+  port: ''
+  loginName: ''
+  password: ''
+emqx:
+  host: ''
+  port: ''
+  loginName: ''
+  password: ''
+  clientId: ''

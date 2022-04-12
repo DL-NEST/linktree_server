@@ -4,7 +4,7 @@
   <component name="GoLibraries">
     <option name="urls">
       <list>
-        <option value="file://$MODULE_DIR$/lib" />
+        <option value="file://$MODULE_DIR$/../../gopath" />
       </list>
     </option>
   </component>

@@ -4,7 +4,9 @@ import (
 	"fmt"
 	"gopkg.in/yaml.v2"
 	"io/ioutil"
+	"linuxNet/utils/logger"
 )
+
 /*
 	读取配置文件
 */
@@ -16,23 +18,23 @@ type Config struct {
 		Port string `json:"port"`
 	} `json:"server"`
 	Mqtt struct {
-		Host string `json:"host"`
-		Port string `json:"port"`
+		Host      string `json:"host"`
+		Port      string `json:"port"`
 		LoginName string `json:"loginName"`
-		Password string `json:"password"`
+		Password  string `json:"password"`
 	} `json:"mqtt"`
 	Redis struct {
-		Host string `json:"host"`
-		Port string `json:"port"`
+		Host      string `json:"host"`
+		Port      string `json:"port"`
 		LoginName string `json:"loginName"`
-		Password string `json:"password"`
+		Password  string `json:"password"`
 	} `json:"redis"`
 	Emqx struct {
-		Host string `json:"host"`
-		Port string `json:"port"`
+		Host      string `json:"host"`
+		Port      string `json:"port"`
 		LoginName string `json:"loginName"`
-		Password string `json:"password"`
-		ClientID string `json:"clientId"`
+		Password  string `json:"password"`
+		ClientID  string `json:"clientId"`
 	} `json:"emqx"`
 }
 
@@ -44,13 +46,15 @@ func ReadConfig(configPath string) *Config {
 		fmt.Print(err)
 	}
 	// yaml文件内容影射到结构体中
-	err1:=yaml.Unmarshal(config,&conf)
-	if err1!=nil{
-		fmt.Println("error")
+	err1 := yaml.Unmarshal(config, &conf)
+	if err1 != nil {
+		logger.Log().Info("配置文件读取失败")
 	}
+
+	logger.Log().Info("配置文件读取成功")
 	return conf
 }
 
-func InitConfig(configPath string)  {
+func InitConfig(configPath string) {
 	Conf = ReadConfig(configPath)
 }

@@ -6,16 +6,16 @@ import (
 	"github.com/shirou/gopsutil/v3/host"
 	"github.com/shirou/gopsutil/v3/mem"
 	"github.com/shirou/gopsutil/v3/net"
-	"linuxNet/server/model/emqx"
+	"linuxNet/model/emqx"
 	"strings"
 	"time"
 )
 
 type SysInfo struct {
-	CpuInfo  CpuInfo  `json:"cpuInfo"`
-	MemInfo  MemInfo  `json:"memInfo"`
+	CpuInfo  CpuInfo             `json:"cpuInfo"`
+	MemInfo  MemInfo             `json:"memInfo"`
 	DiskNode map[string]DiskNode `json:"diskNode"`
-	HostInfo HostInfo `json:"hostInfo"`
+	HostInfo HostInfo            `json:"hostInfo"`
 	NetNode  map[string]NetNode  `json:"netNode"`
 }
 

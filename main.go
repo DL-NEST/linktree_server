@@ -3,8 +3,9 @@ package main
 import (
 	"fmt"
 	"linuxNet/bootstrap"
-	"linuxNet/server/model/emqx"
-	"linuxNet/server/router"
+	"linuxNet/model/emqx"
+	sock "linuxNet/model/socket"
+	"linuxNet/server"
 	"time"
 	//"github.com/tensorflow/tensorflow/tensorflow/go"
 )
@@ -13,8 +14,8 @@ func init() {
 	// 比main先加载
 	bootstrap.InitApp()
 	bootstrap.InitConfig("config/config.yaml")
-	// 初始化socket连接池
-	//socket.InitWsPool(10)
+	// 初始化socket连接池和数量
+	sock.InitWsPool(10)
 	// 初始化mqtt
 	emqx.InitMqtt()
 }
@@ -33,7 +34,7 @@ func main() {
 
 	// 初始化MQTT服务器
 	// 初始化全局对象,参数
-	router.InitRouter()
+	server.InitRouter()
 }
 
 func goService() {

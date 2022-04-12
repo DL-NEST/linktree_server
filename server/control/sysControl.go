@@ -2,7 +2,7 @@ package control
 
 import (
 	"github.com/gin-gonic/gin"
-	"linuxNet/process"
+	"linuxNet/model/emqx"
 	"linuxNet/server/result"
 	"linuxNet/server/result/code"
 	"linuxNet/server/service"
@@ -26,5 +26,5 @@ func GetNetInfo(c *gin.Context) {
 	result.APIResponse(c, code.OK, service.GetNetInfo())
 }
 func GetMqttList(c *gin.Context) {
-	result.APIResponse(c, code.OK,service.GetMqttList(process.Env.MqState))
+	result.APIResponse(c, code.OK, service.GetMqttList(emqx.MqttClient))
 }

@@ -83,7 +83,7 @@ func (log *Logger) GinLog(ms GinMsg) {
 		time.Now().Format("2006-01-02 15:04:05"),
 	)
 	msg := fmt.Sprintf(
-		" |%v|\t\t %v |\t\t %v | %v \"%v\" \n",
+		" |%v|%v |\t\t %v | %v \"%v\" \n",
 		ms.StatusCodeColor(),
 		ms.Proto,
 		ms.Host,

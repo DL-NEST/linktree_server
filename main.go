@@ -10,6 +10,9 @@ import (
 	//"github.com/tensorflow/tensorflow/tensorflow/go"
 )
 
+//go:generate go env -w GO111MODULE=on
+//go:generate go env -w GOPROXY=https://mirrors.aliyun.com/goproxy/
+
 func init() {
 	// 获取控制台输入
 	bootstrap.InitFlag()
@@ -20,6 +23,7 @@ func init() {
 }
 
 func main() {
+
 	// 设置日记级别
 	logger.Level = logger.LevelDebug
 	// 初始化socket连接池和数量

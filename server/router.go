@@ -18,28 +18,21 @@ func InitGin() {
 	//gin.DefaultErrorWriter = io.MultiWriter(middleware.LogFile(), os.Stdout)
 	gin.SetMode(gin.ReleaseMode)
 }
-func ginConfig(server *gin.Engine) {
-	// 为 multipart forms 设置较低的内存限制 (默认是 32 MiB)
-	// 上传文件大小
-	server.MaxMultipartMemory = 8 << 20 // 8 MiB
-	// 定义跨域标头
-	// InitCORS(server)
-	// 网页
-	server.Use(gzip.Gzip(gzip.DefaultCompression))
-}
 
 func InitRouter() *gin.Engine {
 	InitGin()
 	// 配置gin 使用自定义中间件
 	server := gin.New()
-	ginConfig(server)
+	server.Use(middleware.Logger(), gin.Recovery())
+	// Gzip
+	server.Use(gzip.Gzip(gzip.DefaultCompression))
 	// 全局请求中间件
 	//server.Use(middleware.GlobalAuth())
-	server.Use(middleware.JsType(), middleware.Logger())
+	//server.Use(middleware.JsType())
 	server.LoadHTMLGlob("web/dist/*.html")
 	server.StaticFS("/assets", http.Dir("web/dist/assets"))
 	server.GET("/", func(c *gin.Context) {
-		c.HTML(http.StatusOK, "index.html", middleware.JsType)
+		c.HTML(http.StatusOK, "index.html", nil)
 	})
 	// 注册api
 	v1.InjectV1(server)

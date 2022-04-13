@@ -3,15 +3,15 @@ package control
 import (
 	"fmt"
 	"github.com/gin-gonic/gin"
-	"linuxNet/server/handler"
 	"linuxNet/server/result"
 	"linuxNet/server/result/code"
+	"linuxNet/utils/logger"
 )
 
 func UploadOne(c *gin.Context) {
 	file, _ := c.FormFile("file")
 	toFilePath := fmt.Sprintf("file/%v", file.Filename)
-	handler.Log().Info(file.Filename+"-to-", toFilePath)
+	logger.Log().Info(file.Filename+"-to-", toFilePath)
 	// 上传文件至指定目录
 	err := c.SaveUploadedFile(file, toFilePath)
 	if err != nil {

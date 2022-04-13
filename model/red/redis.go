@@ -6,6 +6,17 @@ import (
 	"time"
 )
 
+//red.SetKey("zz","ssf",1*time.Minute)
+//val,err := red.GetKey("ji")
+//if err {
+//	fmt.Print(val)
+//}else {
+//	fmt.Print("df")
+//}
+//time.Sleep(time.Second * 1) // 暂停一秒等待 subscribe 完成
+////emqx.Publish(mqt,0)
+//fmt.Println(utils.GetUUID())
+
 func LinkRedis() *redis.Client {
 	rdb := redis.NewClient(&redis.Options{
 		Addr:     "localhost:6379",

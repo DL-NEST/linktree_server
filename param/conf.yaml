@@ -1,0 +1,21 @@
+service:
+    port: 5214
+    serverLog: ./file/log/log_server.txt
+    requestLog: ./file/log/log_request.txt
+    mode: DebugMode
+mqtt:
+    host: ""
+    port: ""
+    loginName: ""
+    password: ""
+redis:
+    host: ""
+    port: ""
+    loginName: ""
+    password: ""
+emqx:
+    host: ""
+    port: ""
+    loginName: ""
+    password: ""
+    clientId: ""

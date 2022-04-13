@@ -1,6 +1,6 @@
 <h1 align="center">
   <br>
-  <a href="https://cloudreve.org/" alt="logo" ><img src="https://raw.githubusercontent.com/cloudreve/frontend/master/public/static/img/logo192.png" width="150"/></a>
+  <a href="https://github.com/DL-NEST/linktree_server" alt="logo" ><img src="http://1.14.96.5:10086/images/2022/04/13/logofa82a6906044862c.png" width="150"/></a>
   <br>
       LinkTree
   <br>

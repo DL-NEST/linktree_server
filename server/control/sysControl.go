@@ -2,10 +2,10 @@ package control
 
 import (
 	"github.com/gin-gonic/gin"
-	"linuxNet/model/emqx"
-	"linuxNet/server/result"
-	"linuxNet/server/result/code"
-	"linuxNet/server/service"
+	"linktree_server/model/emqx"
+	"linktree_server/server/result"
+	"linktree_server/server/result/code"
+	"linktree_server/server/service"
 )
 
 // SysServer /* 获取系统信息

@@ -3,9 +3,9 @@ package control
 import (
 	"fmt"
 	"github.com/gin-gonic/gin"
-	"linuxNet/server/result"
-	"linuxNet/server/result/code"
-	"linuxNet/utils/logger"
+	"linktree_server/server/result"
+	"linktree_server/server/result/code"
+	"linktree_server/utils/logger"
 )
 
 func UploadOne(c *gin.Context) {

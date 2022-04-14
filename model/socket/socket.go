@@ -1,7 +1,7 @@
 package socket
 
 import (
-	"linuxNet/model/socket/wsPool"
+	"linktree_server/model/socket/wsPool"
 )
 
 var WsPool wsPool.Pool

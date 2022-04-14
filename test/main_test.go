@@ -2,7 +2,7 @@ package test
 
 import (
 	"fmt"
-	"linuxNet/bootstrap"
+	"linktree_server/bootstrap"
 	"testing"
 )
 

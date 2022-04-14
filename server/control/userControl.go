@@ -2,9 +2,9 @@ package control
 
 import (
 	"github.com/gin-gonic/gin"
-	"linuxNet/server/result"
-	"linuxNet/server/result/code"
-	"linuxNet/server/service"
+	"linktree_server/server/result"
+	"linktree_server/server/result/code"
+	"linktree_server/server/service"
 )
 
 type UserLoginService struct {
@@ -18,6 +18,15 @@ type UserRegisterService struct {
 	Time     string `form:"time" json:"time" binding:"required,min=8,max=40"`
 }
 
+// UserLogin
+// @Tags User
+// @Summary 用户登录
+// @Description 用户登录权鉴
+// @Param data body UserLoginService true "用户名, 密码, 验证码"
+// @Accept application/json
+// @Produce  application/json
+// @Success 200 {object} UserRegisterService
+// @Router /user/login [post]
 func UserLogin(c *gin.Context) {
 	var userLoginService UserLoginService
 	if err := c.ShouldBind(&userLoginService); err != nil {

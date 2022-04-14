@@ -3,7 +3,7 @@ package bootstrap
 import (
 	"fmt"
 	"gopkg.in/yaml.v3"
-	"linuxNet/utils/logger"
+	"linktree_server/utils/logger"
 	"log"
 	"os"
 )

@@ -6,7 +6,7 @@ import (
 	"github.com/shirou/gopsutil/v3/host"
 	"github.com/shirou/gopsutil/v3/mem"
 	"github.com/shirou/gopsutil/v3/net"
-	"linuxNet/model/emqx"
+	"linktree_server/model/emqx"
 	"strings"
 	"time"
 )

@@ -2,11 +2,11 @@ package main
 
 import (
 	"fmt"
-	"linuxNet/bootstrap"
-	"linuxNet/model/emqx"
-	sock "linuxNet/model/socket"
-	"linuxNet/server"
-	"linuxNet/utils/logger"
+	"linktree_server/bootstrap"
+	"linktree_server/model/emqx"
+	sock "linktree_server/model/socket"
+	"linktree_server/server"
+	"linktree_server/utils/logger"
 	//"github.com/tensorflow/tensorflow/tensorflow/go"
 )
 

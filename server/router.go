@@ -5,8 +5,11 @@ import (
 	_ "github.com/gin-contrib/cors"
 	"github.com/gin-contrib/gzip"
 	"github.com/gin-gonic/gin"
-	v1 "linuxNet/server/api/v1"
-	"linuxNet/server/middleware"
+	"github.com/swaggo/gin-swagger"
+	"github.com/swaggo/gin-swagger/swaggerFiles"
+	_ "linktree_server/docs"
+	v1 "linktree_server/server/api/v1"
+	"linktree_server/server/middleware"
 	"net/http"
 	"time"
 )
@@ -28,12 +31,14 @@ func InitRouter() *gin.Engine {
 	server.Use(gzip.Gzip(gzip.DefaultCompression))
 	// 全局请求中间件
 	//server.Use(middleware.GlobalAuth())
-	//server.Use(middleware.JsType())
+	server.Use(middleware.JsType())
+
 	server.LoadHTMLGlob("web/dist/*.html")
 	server.StaticFS("/assets", http.Dir("web/dist/assets"))
-	server.GET("/", func(c *gin.Context) {
-		c.HTML(http.StatusOK, "index.html", nil)
-	})
+	server.StaticFile("/", "web/dist/index.html")
+
+	server.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
+
 	// 注册api
 	v1.InjectV1(server)
 

@@ -15,7 +15,88 @@ const docTemplate_swagger = `{
     },
     "host": "{{.Host}}",
     "basePath": "{{.BasePath}}",
-    "paths": {}
+    "paths": {
+        "/user/login": {
+            "post": {
+                "description": "用户登录权健",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "User"
+                ],
+                "summary": "用户登录",
+                "parameters": [
+                    {
+                        "description": "用户名, 密码, 验证码",
+                        "name": "data",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/control.UserLoginService"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/control.UserRegisterService"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "control.UserLoginService": {
+            "type": "object",
+            "required": [
+                "password",
+                "user_name"
+            ],
+            "properties": {
+                "password": {
+                    "type": "string",
+                    "maxLength": 40,
+                    "minLength": 8
+                },
+                "user_name": {
+                    "type": "string",
+                    "maxLength": 30,
+                    "minLength": 5
+                }
+            }
+        },
+        "control.UserRegisterService": {
+            "type": "object",
+            "required": [
+                "password",
+                "time",
+                "user_name"
+            ],
+            "properties": {
+                "password": {
+                    "type": "string",
+                    "maxLength": 40,
+                    "minLength": 8
+                },
+                "time": {
+                    "type": "string",
+                    "maxLength": 40,
+                    "minLength": 8
+                },
+                "user_name": {
+                    "type": "string",
+                    "maxLength": 30,
+                    "minLength": 5
+                }
+            }
+        }
+    }
 }`
 
 // SwaggerInfo_swagger holds exported Swagger Info so clients can modify it

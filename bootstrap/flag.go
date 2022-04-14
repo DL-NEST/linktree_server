@@ -2,7 +2,7 @@ package bootstrap
 
 import (
 	"flag"
-	"linuxNet/utils/logger"
+	"linktree_server/utils/logger"
 	"os"
 )
 

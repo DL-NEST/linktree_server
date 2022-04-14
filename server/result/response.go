@@ -2,7 +2,7 @@ package result
 
 import (
 	"github.com/gin-gonic/gin"
-	"linuxNet/server/result/code"
+	"linktree_server/server/result/code"
 	"net/http"
 )
 

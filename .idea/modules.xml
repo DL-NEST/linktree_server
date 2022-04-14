@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/linuxNet.iml" filepath="$PROJECT_DIR$/.idea/linuxNet.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/linktree_server.iml" filepath="$PROJECT_DIR$/.idea/linktree_server.iml" />
     </modules>
   </component>
 </project>

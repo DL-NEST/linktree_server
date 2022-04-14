@@ -2,12 +2,12 @@ package v1
 
 import (
 	"github.com/gin-gonic/gin"
-	sock "linuxNet/model/socket"
-	"linuxNet/model/socket/wsPool"
-	"linuxNet/server/control"
-	"linuxNet/server/result"
-	"linuxNet/server/result/code"
-	"linuxNet/server/service"
+	sock "linktree_server/model/socket"
+	"linktree_server/model/socket/wsPool"
+	"linktree_server/server/control"
+	"linktree_server/server/result"
+	"linktree_server/server/result/code"
+	"linktree_server/server/service"
 )
 
 func InjectV1(server *gin.Engine) {

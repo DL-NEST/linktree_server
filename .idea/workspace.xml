@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="ALL" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="f2784ea3-a458-456b-96a1-80c1f271d47f" name="变更" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/LENOVO.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/linuxNet.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/webResources.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap/config.go" beforeDir="false" afterPath="$PROJECT_DIR$/bootstrap/config.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap/flag.go" beforeDir="false" afterPath="$PROJECT_DIR$/bootstrap/flag.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/docs.go" beforeDir="false" afterPath="$PROJECT_DIR$/docs/docs.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/swagger.json" beforeDir="false" afterPath="$PROJECT_DIR$/docs/swagger.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/swagger.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docs/swagger.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/linktree_server.exe" beforeDir="false" afterPath="$PROJECT_DIR$/linktree_server.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/socket/socket.go" beforeDir="false" afterPath="$PROJECT_DIR$/model/socket/socket.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/api/v1/v1.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/api/v1/v1.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/control/fileControl.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/control/fileControl.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/control/sockerControl.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/control/sockerControl.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/control/sysControl.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/control/sysControl.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/control/userControl.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/control/userControl.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/middleware/logger.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/middleware/logger.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/middleware/permission.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/middleware/permission.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/result/response.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/result/response.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/router.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/router.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/service/sysService.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/service/sysService.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/main_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/test/main_test.go" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="GOROOT" url="file://C:/Program Files/Go" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GoLibraries">
+    <option name="indexEntireGoPath" value="false" />
+  </component>
+  <component name="ProjectId" id="27mAQcPajSdufX5SXtYv0Ac87mU" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="configurable..is.expanded" value="true" />
+    <property name="configurable.GoLibrariesConfigurable.is.expanded" value="true" />
+    <property name="go.formatter.settings.were.checked" value="true" />
+    <property name="go.import.settings.migrated" value="true" />
+    <property name="go.modules.go.list.on.any.changes.was.set" value="true" />
+    <property name="go.sdk.automatically.set" value="true" />
+    <property name="last_opened_file_path" value="$USER_HOME$" />
+    <property name="settings.editor.selected.configurable" value="com.goide.configuration.GoLibrariesConfigurableProvider" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VgoProject">
+    <integration-enabled>true</integration-enabled>
+  </component>
+</project>

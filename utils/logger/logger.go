@@ -35,9 +35,11 @@ var colors = map[string]func(a ...interface{}) string{
 	"Panic":   color.New(color.BgRed).Add(color.Bold).SprintFunc(),
 	"Error":   color.New(color.FgRed).Add(color.Bold).SprintFunc(),
 	"Info":    color.New(color.FgCyan).Add(color.Bold).SprintFunc(),
-	"Debug":   color.New(color.FgWhite).Add(color.Bold).SprintFunc(),
+	"Debug":   color.New(color.FgHiMagenta).Add(color.Bold).SprintFunc(),
 	"Gin":     color.New(color.FgHiCyan).Add(color.Bold).SprintFunc(),
 	"Flag":    color.New(color.FgYellow).Add(color.Bold).SprintFunc(),
+	"Socket":  color.New(color.FgHiCyan).Add(color.Bold).SprintFunc(),
+	"Mqtt":    color.New(color.FgHiCyan).Add(color.Bold).SprintFunc(),
 }
 
 // 不同级别前缀与时间的间隔，保持宽度一致
@@ -49,6 +51,8 @@ var spaces = map[string]string{
 	"Debug":   "  ",
 	"Gin":     "    ",
 	"Flag":    "   ",
+	"Socket":  " ",
+	"Mqtt":    "   ",
 }
 
 func logFile(path string) *os.File {
@@ -142,6 +146,22 @@ func (log *Logger) Flag(format string, v ...interface{}) {
 	msg := fmt.Sprintf(format, v...)
 	log.Println("Flag", msg)
 }
+// Socket 控制台输入
+func (log *Logger) Socket(format string, v ...interface{}) {
+	if LevelError > log.level {
+		return
+	}
+	msg := fmt.Sprintf(format, v...)
+	log.Println("Socket", msg)
+}
+// Mqtt 控制台输入
+func (log *Logger) Mqtt(format string, v ...interface{}) {
+	if LevelError > log.level {
+		return
+	}
+	msg := fmt.Sprintf(format, v...)
+	log.Println("Mqtt", msg)
+}
 
 // Log 返回日志对象
 func Log() *Logger {
@@ -152,4 +172,9 @@ func Log() *Logger {
 		GlobalLogger = &l
 	}
 	return GlobalLogger
+}
+
+func Debug(format string, v ...interface{})  {
+	msg := fmt.Sprintf(format, v...)
+	Log().Debug(msg)
 }

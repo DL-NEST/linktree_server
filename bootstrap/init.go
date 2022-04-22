@@ -2,6 +2,7 @@ package bootstrap
 
 import (
 	"fmt"
+	"linktree_server/utils/logger"
 )
 
 // InitApp 初始化程序打印版本号
@@ -27,4 +28,14 @@ func InitApp() {
 	fmt.Printf("\u001B[;32m" + "=====================================================================================\u001B[0m\n\n")
 
 	GlobalConsole.OutFlag()
+}
+
+func OutInfo() string {
+	port := fmt.Sprint(":", Conf.Service.Port)
+	// 输出信息
+	logger.Log().Info("监听服务端口" + port)
+	logger.Log().Info("服务启动成功: http://localhost" + port)
+	logger.Log().Info("swag文档地址: http://localhost" + port + "/swagger/index.html")
+	fmt.Printf("\n")
+	return port
 }

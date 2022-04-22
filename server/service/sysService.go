@@ -6,7 +6,6 @@ import (
 	"github.com/shirou/gopsutil/v3/host"
 	"github.com/shirou/gopsutil/v3/mem"
 	"github.com/shirou/gopsutil/v3/net"
-	"linktree_server/model/emqx"
 	"strings"
 	"time"
 )
@@ -165,6 +164,6 @@ func GetSysInfo() SysInfo {
 	}
 }
 
-func GetMqttList(MqState *emqx.MqState) map[string]emqx.Sub {
-	return MqState.LinkList
-}
+//func GetMqttList(MqState *emqx.MqState) map[string]emqx.Sub {
+//	return MqState.LinkList
+//}

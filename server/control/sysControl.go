@@ -2,7 +2,6 @@ package control
 
 import (
 	"github.com/gin-gonic/gin"
-	"linktree_server/model/emqx"
 	"linktree_server/server/result"
 	"linktree_server/server/result/code"
 	"linktree_server/server/service"
@@ -25,6 +24,6 @@ func GetHostInfo(c *gin.Context) {
 func GetNetInfo(c *gin.Context) {
 	result.APIResponse(c, code.OK, service.GetNetInfo())
 }
-func GetMqttList(c *gin.Context) {
-	result.APIResponse(c, code.OK, service.GetMqttList(emqx.MqttClient))
-}
+//func GetMqttList(c *gin.Context) {
+//	result.APIResponse(c, code.OK, service.GetMqttList(emqx.MqttClient))
+//}

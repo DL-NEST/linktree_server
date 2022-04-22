@@ -2,27 +2,23 @@ package v1
 
 import (
 	"github.com/gin-gonic/gin"
-	sock "linktree_server/model/socket"
-	"linktree_server/model/socket/wsPool"
+	sock "linktree_server/models/socket"
+	"linktree_server/models/socket/wsPool"
 	"linktree_server/server/control"
 	"linktree_server/server/result"
 	"linktree_server/server/result/code"
 	"linktree_server/server/service"
 )
 
+
 func InjectV1(server *gin.Engine) {
-	// api版本
+	// V1的api
 	V1 := server.Group("/v1")
 
-	user := V1.Group("/user")
-	{
-		user.POST("/login", control.UserLogin)
-		user.POST("/register", control.UserRegister)
-	}
 	// sys /*系统状态的获取和操作
 	sys := V1.Group("/sys")
 	{
-		sys.GET("/getCpuInfo", control.GetSysInfo)
+		sys.GET("/getSysInfo", control.GetSysInfo)
 		sys.GET("/getMemInfo", control.GetMemInfo)
 		sys.GET("/getDiskInfo", control.GetDiskInfo)
 		sys.GET("/getHostInfo", control.GetHostInfo)

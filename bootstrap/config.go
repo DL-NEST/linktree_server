@@ -13,35 +13,6 @@ import (
 */
 var Conf = new(Config)
 
-// Config yaml:""转换工具 https://oktools.net/yaml:""2go
-type Config struct {
-	Service struct {
-		Port       int    `yaml:"port"`
-		ServerLog  string `yaml:"serverLog"`
-		RequestLog string `yaml:"requestLog"`
-		Mode       string `yaml:"mode"`
-	} `yaml:"service"`
-	Mqtt struct {
-		Host      string `yaml:"host"`
-		Port      string `yaml:"port"`
-		LoginName string `yaml:"loginName"`
-		Password  string `yaml:"password"`
-	} `yaml:"mqtt"`
-	Redis struct {
-		Host      string `yaml:"host"`
-		Port      string `yaml:"port"`
-		LoginName string `yaml:"loginName"`
-		Password  string `yaml:"password"`
-	} `yaml:"redis"`
-	Emqx struct {
-		Host      string `yaml:"host"`
-		Port      string `yaml:"port"`
-		LoginName string `yaml:"loginName"`
-		Password  string `yaml:"password"`
-		ClientID  string `yaml:"clientId"`
-	} `yaml:"emqx"`
-}
-
 // ReadConfig 读取配置文件
 func ReadConfig(configPath string) *Config {
 	var conf = new(Config)
@@ -71,9 +42,6 @@ func CreateConfig(path string) {
 	}
 }
 
-func UpdateConfig() {
-
-}
 
 func InitConfig() {
 	if GlobalConsole.Conf != "null" {
@@ -97,4 +65,11 @@ func InitConfig() {
 			Conf = ReadConfig(rootPath)
 		}
 	}
+}
+
+func GetDbConf() bool {
+	if Conf.DB.Port != "" && Conf.DB.Host != "" {
+		return true
+	}
+	return false
 }

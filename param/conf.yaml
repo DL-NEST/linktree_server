@@ -3,9 +3,9 @@ service:
     serverLog: ./file/log/log_server.txt
     requestLog: ./file/log/log_request.txt
     mode: DebugMode
-mqtt:
-    host: ""
-    port: ""
+db:
+    host:
+    port:
     loginName: ""
     password: ""
 redis:

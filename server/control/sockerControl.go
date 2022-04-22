@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"github.com/gin-gonic/gin"
 	"github.com/gorilla/websocket"
-	sock "linktree_server/model/socket"
-	"linktree_server/model/socket/wsPool"
+	sock "linktree_server/models/socket"
+	"linktree_server/models/socket/wsPool"
 	"net/http"
 )
 
@@ -28,6 +28,7 @@ func UpgradeSocket(c *gin.Context) {
 		WriteBufferSize: 2048,
 		CheckOrigin:     checkOrigin,
 	}
+	// 升级为socket
 	Conn, err := ws.upgrade.Upgrade(c.Writer, c.Request, nil)
 	if err != nil {
 		fmt.Printf("%s连接失败\n", token)

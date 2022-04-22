@@ -1,0 +1,22 @@
+service:
+    port: 5241
+    serverLog: ""
+    requestLog: ""
+    mode: ""
+    db: ""
+db:
+    host: ""
+    port: ""
+    loginName: ""
+    password: ""
+redis:
+    host: ""
+    port: ""
+    loginName: ""
+    password: ""
+emqx:
+    host: ""
+    port: ""
+    loginName: ""
+    password: ""
+    clientId: ""

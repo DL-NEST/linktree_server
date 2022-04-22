@@ -8,6 +8,7 @@ import (
 	"github.com/swaggo/gin-swagger"
 	"github.com/swaggo/gin-swagger/swaggerFiles"
 	_ "linktree_server/docs"
+	"linktree_server/server/api/fixed"
 	v1 "linktree_server/server/api/v1"
 	"linktree_server/server/middleware"
 	"net/http"
@@ -26,6 +27,7 @@ func InitRouter() *gin.Engine {
 	InitGin()
 	// 配置gin 使用自定义中间件
 	server := gin.New()
+
 	server.Use(middleware.Logger(), gin.Recovery())
 	// Gzip
 	server.Use(gzip.Gzip(gzip.DefaultCompression))
@@ -36,9 +38,11 @@ func InitRouter() *gin.Engine {
 	server.LoadHTMLGlob("web/dist/*.html")
 	server.StaticFS("/assets", http.Dir("web/dist/assets"))
 	server.StaticFile("/", "web/dist/index.html")
-
+	// swagger生成的文档，更新 CMD swag init
 	server.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
 
+	// 固定的api
+	fixed.Fixed(server)
 	// 注册api
 	v1.InjectV1(server)
 
@@ -49,7 +53,7 @@ func InitRouter() *gin.Engine {
 func InitCORS(router *gin.Engine) {
 	router.Use(cors.New(cors.Config{
 		AllowOrigins:     []string{"*/*"},
-		AllowMethods:     []string{"PUT", "PATCH", "POST"},
+		AllowMethods:     []string{"PUT", "PATCH", "POST", "GET"},
 		AllowHeaders:     []string{"Origin"},
 		ExposeHeaders:    []string{"Content-Length"},
 		AllowCredentials: true,

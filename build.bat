@@ -1,1 +1,1 @@
-gox -os "linux windows" -arch amd64 -verbose -output "./build"
+gox -os "linux windows" -arch amd64 -verbose -output "./build/{{.Dir}}_{{.OS}}_{{.Arch}}"

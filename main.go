@@ -1,10 +1,9 @@
 package main
 
 import (
-	"fmt"
 	"linktree_server/bootstrap"
-	"linktree_server/model/emqx"
-	sock "linktree_server/model/socket"
+	"linktree_server/models/DB"
+	"linktree_server/models/emqx"
 	"linktree_server/server"
 	"linktree_server/utils/logger"
 	//"github.com/tensorflow/tensorflow/tensorflow/go"
@@ -12,6 +11,7 @@ import (
 
 //go:generate go env -w GO111MODULE=on
 //go:generate go env -w GOPROXY=https://mirrors.aliyun.com/goproxy/
+//go:generate swag init
 
 func init() {
 	// 获取控制台输入
@@ -20,22 +20,19 @@ func init() {
 	bootstrap.InitApp()
 	// 读取配置文件
 	bootstrap.InitConfig()
+	// 连接化数据库
+	DB.CreateDBLink()
+	// 初始化socket连接池和数量
+	//sock.InitWsPool(1)
+	// 初始化mqtt
+	emqx.InitMqtt()
 }
 
 func main() {
-
-	// 设置日记级别
-	logger.Level = logger.LevelDebug
-	// 初始化socket连接池和数量
-	sock.InitWsPool(10)
-	// 初始化mqtt
-	emqx.InitMqtt()
 	// 获取服务
 	service := server.InitRouter()
 	// 启动服务
-	port := fmt.Sprint(":", bootstrap.Conf.Service.Port)
-	logger.Log().Info("监听服务端口" + port)
-	logger.Log().Info("服务启动成功：http://localhost" + port + "\n")
+	port := bootstrap.OutInfo()
 	serverErr := service.Run(port)
 	if serverErr != nil {
 		logger.Log().Error("服务启动失败:%v", serverErr)
